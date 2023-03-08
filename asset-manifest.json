@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/protfolio-rouh/static/css/main.073c9b0a.css",
+    "main.js": "/protfolio-rouh/static/js/main.3c542b77.js",
+    "static/js/787.f06261a1.chunk.js": "/protfolio-rouh/static/js/787.f06261a1.chunk.js",
+    "static/media/logo.svg": "/protfolio-rouh/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/protfolio-rouh/index.html",
+    "main.073c9b0a.css.map": "/protfolio-rouh/static/css/main.073c9b0a.css.map",
+    "main.3c542b77.js.map": "/protfolio-rouh/static/js/main.3c542b77.js.map",
+    "787.f06261a1.chunk.js.map": "/protfolio-rouh/static/js/787.f06261a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.3c542b77.js"
+  ]
+}
