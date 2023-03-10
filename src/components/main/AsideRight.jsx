@@ -1,17 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 function AsideRight(){
+	
+	const [asideMail, setAsideMail] = useState(false);
+
+	const changeColor = () =>{
+		if(window.scrollY >= 300){
+			setAsideMail(true);
+		}else{
+			setAsideMail(false);
+		}
+	}
+
+	window.addEventListener('scroll',changeColor);
+
 	return(
 	<>
 		{//email
 		}
 		<WrapperAsideRight>
 		    <div id="email">
-			<a href="mailto:huor97ka@gmail.com">huor97ka@gmail.com</a>
+			<a className={asideMail ? 'asideMaile active': 'asideMaile'} href="mailto:huor97ka@gmail.com">huor97ka@gmail.com</a>
 		
 		    </div>
-		    <LigneVertical>
+		    <LigneVertical id="ligneVertical" style={asideMail ? {backgroundColor:"rgb(0, 41, 81)"} : {backgroundColor:"#FFFFFF"} }>
 		    </LigneVertical>
 		</WrapperAsideRight>
 	</>
@@ -21,9 +34,10 @@ function AsideRight(){
 export default AsideRight;
 
 const WrapperAsideRight = styled.div`
-	background-color:rgb(0, 41, 81);
+	position: fixed;
 	width: 12%;
 	height: 620px;
+	margin-left: 90%;
 	display: flex;
 	flex-direction: column;	
 	justify-content: end;
@@ -39,15 +53,25 @@ const WrapperAsideRight = styled.div`
 		transform: rotate(90deg);
 	}
 
-	#email a{
+	#email .asideMaile {
 		text-decoration: none;	
 		color: #FFFFFF;
 		transition: 0.3s;
 		margin-bottom: 4px;
 	}
+	#email .asideMaile.active{
+		color: rgb(0, 41, 81);
+		transition: 0.3s;
+	}
+	
+	#email .asideMaile.active:hover{
+		color: #FB7800;
+	}
+
 	#email a:hover{
 		color: #FB7800;
 	}
+	
 `
 const LigneVertical= styled.div`
 	background-color: #FFFFFF;
