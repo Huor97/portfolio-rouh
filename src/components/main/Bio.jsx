@@ -39,7 +39,7 @@ export default Bio;
 
 const Wrapper = styled.div`
 	background-color:rgb(0, 41, 81);
-	width:88%;
+	width:100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
