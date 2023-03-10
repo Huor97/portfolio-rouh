@@ -1,35 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter,faGitlab, faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 function AsideLeft(){
+
+	const [asideIcons, setAsideIcons] = useState(false);
+
+	const changeColor = () =>{
+
+		if(window.scrollY >= 300){
+			setAsideIcons(true);
+		}else{
+			setAsideIcons(false);
+		}
+	} 
+
+	window.addEventListener('scroll', changeColor);
+
 	return(
 	<>
 		{//icons container
 		}
 		<Icons>
-		    <div class="icons">
-			<a href="#">
+		    <div className={asideIcons? 'icons action' : 'icons'} >
+			<a className={asideIcons? 'icon action' : 'icon'}  href="#">
 			     <FontAwesomeIcon icon={faTwitter} />
 			</a>
 		    </div>
-		    <div class="icons">
-			<a href="#">
+		    <div className={asideIcons? 'icons action' : 'icons'} >
+			<a className={asideIcons? 'icon action' : 'icon'} href="#">
 			     <FontAwesomeIcon icon={faGitlab} />
 			</a>
 		    </div>
-		    <div class="icons">
-			<a href="#">
+		    <div className={ asideIcons? 'icons action':'icons'}>
+			<a className={asideIcons? 'icon action' : 'icon'} href="#">
 		             <FontAwesomeIcon icon={faGithubAlt} />
 			</a>
 		    </div>
-		    <div class="icons">
-			<a href="#">
+		    <div className={ asideIcons? "icons action" : 'icons'}>
+			<a className={asideIcons? 'icon action' : 'icon'} href="#">
 		             <FontAwesomeIcon icon={faLinkedinIn} />
 			</a>
 		    </div>
-		    <LigneVertical>
+		    <LigneVertical style={asideIcons? {backgroundColor: 'rgb(0, 48, 80)'} : {backgroundColor: '#FFFFFF'}  }>
 		    </LigneVertical>
 		</Icons>
 	</>
@@ -43,7 +57,7 @@ export default AsideLeft;
 
 const Icons = styled.div`
 	color: #FFFFFF;
-	background-color:rgb(0, 41, 81);
+	position: fixed;
 	width: 12%;
 	height: 620px;
 	display: flex;
@@ -61,15 +75,26 @@ const Icons = styled.div`
 		align-items: center;
 		margin-bottom: 15px;
 	}
-	.icons a{
+	.icons.action {
+		color: rgb(0, 48, 80);
+	}
+
+	.icons:hover{
+		border-color: #FB7800;
+	}
+	.icons .icon:hover{
+		color: #FB7800;
+	}
+
+	.icon{
 		text-decoration: none;
 		color: #FFFFFF;
 		transition: 0.3s;
 	}
-	.icons:hover{
-		border-color: #FB7800;
+	.icon.action{
+		color: rgb(0, 48, 80);
 	}
-	.icons a:hover{
+	.icon.action:hover{
 		color: #FB7800;
 	}
 `
