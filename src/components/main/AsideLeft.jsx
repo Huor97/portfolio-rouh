@@ -8,11 +8,13 @@ function AsideLeft(){
 	const [asideIcons, setAsideIcons] = useState(false);
 
 	const changeColor = () =>{
-
+		console.log(window.scrollY);
 		if(window.scrollY >= 300){
+			
 			setAsideIcons(true);
+
 		}else{
-			setAsideIcons(false);
+			setAsideIcons(false)
 		}
 	} 
 
@@ -23,7 +25,7 @@ function AsideLeft(){
 		{//icons container
 		}
 		<Icons>
-		    <div className={asideIcons? 'icons action' : 'icons'} >
+		    <div  className={asideIcons? 'icons action' : 'icons'} >
 			<a className={asideIcons? 'icon action' : 'icon'}  href="#">
 			     <FontAwesomeIcon icon={faTwitter} />
 			</a>
