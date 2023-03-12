@@ -21,7 +21,7 @@ function Header(){
 				<ul>
 					<li><a href="#"> Home </a></li>
 					<li><a href="#"> Compétence </a></li>
-					<li><a href="#"> Projet </a></li>
+					<li><a href="../projet/ProjetMain.jsx"> Projet </a></li>
 					<li><a href="#"> Contact </a></li>
 				</ul>	
 			</DivMenuBar>
